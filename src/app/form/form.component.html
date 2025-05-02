@@ -1,0 +1,41 @@
+<div class="form">
+    <h2>How do you feel today :</h2>
+    <ul>
+        <li>
+            <input 
+            type="checkbox" 
+            name="happy" 
+            id="happyCB">
+            <label for="happyCB">HAPPY</label>
+        </li>
+        <li>
+            <input 
+            type="checkbox" 
+            name="sad" 
+            id="sadCB">
+            <label for="sadCB">SAD</label>
+        </li>
+        <li>
+            <input 
+            type="checkbox" 
+            name="angry" 
+            id="angryCB">
+            <label for="angryCB">ANGRY</label>
+        </li>
+        <li>
+            <input 
+            type="checkbox" 
+            name="bored" 
+            id="boredCB">
+            <label for="boredCB">BORED</label>
+        </li>
+    </ul>
+    <button 
+    id="next" 
+    (click)="submitMood()" 
+    (click)="isHappyChecked()" 
+    (click)="isAngryChecked()" 
+    (click)="isSadChecked()" 
+    (click)="isBoredChecked()">Next</button>
+</div>
+

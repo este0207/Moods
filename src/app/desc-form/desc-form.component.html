@@ -1,0 +1,31 @@
+<div class="descform">
+    <h2>Avez-vous plus de détails <br> sur votre ressenti ?</h2>
+    <div class="container">
+        <ul>
+            <li>
+                <label for="">1</label>
+                <input type="text" id="input1" required>
+            </li>
+            <li>
+                <label for="">2</label>
+                <input type="text" id="input2" required>
+            </li>
+            <li>
+                <label for="">3</label>
+                <input type="text" id="input3" required>
+            </li>
+            <li>
+                <label for="">4</label>
+                <input type="text" id="input4" required>
+            </li>
+        </ul>
+    </div>
+    <button 
+    id="next" 
+    (click)="submitMoodDesc()"
+    (click)="updateMoodDescription1()"
+    (click)="updateMoodDescription2()"
+    (click)="updateMoodDescription3()"
+    (click)="updateMoodDescription4()"
+    >Next</button>
+</div>

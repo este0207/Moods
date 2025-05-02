@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+*{
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+}
+
+body, html{
+    height: 100%;
+    width: 100%;
+    overflow:hidden;
+}
+body{
+    background: linear-gradient( #7456FA, #453394);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110vh;
+}
+
