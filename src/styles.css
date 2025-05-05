@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
+:root {
+    --main-bg-color: linear-gradient( #7456FA, #453394);
+  }
+
 *{
     font-family: "Varela Round", sans-serif;
     font-weight: 400;
@@ -15,7 +19,7 @@ body, html{
     overflow:hidden;
 }
 body{
-    background: linear-gradient( #7456FA, #453394);
+    background: var(--main-bg-color);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
