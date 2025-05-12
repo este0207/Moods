@@ -1,7 +1,0 @@
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["test/Moods/backend/src/*"]
-    }
-  }
-}
