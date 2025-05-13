@@ -6,10 +6,11 @@ import { ModdCardComponent } from "./modd-card/modd-card.component";
 import { HeadComponent } from "./head/head.component";
 import { FormComponent } from "./form/form.component";
 import { DescFormComponent } from "./desc-form/desc-form.component";
+import { MapComponent } from "./map/map.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBarComponent, ModdCardComponent, HeadComponent, FormComponent, DescFormComponent],
+  imports: [RouterOutlet, NavBarComponent, ModdCardComponent, HeadComponent, FormComponent, DescFormComponent, MapComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

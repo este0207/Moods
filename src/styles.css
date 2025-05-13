@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import 'leaflet/dist/leaflet.css';
 
 :root {
     --main-bg-color: linear-gradient( #7456FA, #453394);
