@@ -3,11 +3,10 @@
     top: 0;
     left: 100%;
     width: 100%;
-    height: 100vh;
-    z-index: 500;
-    background-color: white;
+    height: 100%;
+    background: white;
     transition: left 0.3s ease-in-out;
-    display: flex;
+    z-index: 1000;
 }
 
 #map {
@@ -17,22 +16,28 @@
 
 .close-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 501;
-    background: none;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    background: white;
     border: none;
-    font-size: 24px;
-    cursor: pointer;
-    aspect-ratio: 1/1;
-    color: #333;
-    padding: 10px;
+    padding: 8px;
     border-radius: 50%;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .close-btn:hover {
-    transform: scale(1.1);
+    background: #f5f5f5;
+}
+
+.custom-marker {
+    border: none;
+    background: none;
+}
+
+/* Assurez-vous que la carte prend toute la hauteur disponible */
+:host {
+    display: block;
+    height: 100%;
 }
