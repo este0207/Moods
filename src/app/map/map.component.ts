@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+
+
 
 @Component({
   selector: 'app-map',
@@ -19,9 +20,9 @@ export class MapComponent implements OnInit {
 
   constructor() {
     // Fix Leaflet's default icon path issues
-    const iconRetinaUrl = 'assets/marker-icon-2x.png';
-    const iconUrl = 'assets/marker-icon.png';
-    const shadowUrl = 'assets/marker-shadow.png';
+    const iconRetinaUrl = './marker-icon-2x.png';
+    const iconUrl = './marker-icon.png';
+    const shadowUrl = './marker-shadow.png';
     const iconDefault = L.icon({
       iconRetinaUrl,
       iconUrl,
