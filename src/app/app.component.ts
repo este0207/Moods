@@ -82,4 +82,22 @@ export class AppComponent {
       console.log('No data found in LocalStorage for the key "mood".');
     }
   }
+
+  DeleteLO() {
+    // Calculer le temps jusqu'à minuit prochain
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
+    const timeUntilMidnight = midnight.getTime() - now.getTime();
+
+    // Première exécution à minuit
+    setTimeout(() => {
+      localStorage.clear();
+      
+      // Ensuite, exécuter tous les jours à minuit
+      setInterval(() => {
+        localStorage.clear();
+      }, 24 * 60 * 60 * 1000); // 24 heures en millisecondes
+    }, timeUntilMidnight);
+  }
 }
