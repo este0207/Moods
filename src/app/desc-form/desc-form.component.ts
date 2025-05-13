@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { ModdCardComponent } from '../modd-card/modd-card.component';
-import { NavBarComponent } from '../nav-bar/nav-bar.component';
+
 
 @Component({
   selector: 'app-desc-form',
-  imports: [ModdCardComponent, NavBarComponent],
+  imports: [],
   templateUrl: './desc-form.component.html',
   styleUrl: './desc-form.component.css'
 })
