@@ -20,4 +20,10 @@ describe('NavBarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit openModal when onOpenIframeModal is called', () => {
+    spyOn(component.openModal, 'emit');
+    component.onOpenIframeModal();
+    expect(component.openModal.emit).toHaveBeenCalled();
+  });
 });

@@ -6,14 +6,26 @@ import { HeadComponent } from "./head/head.component";
 import { FormComponent } from "./form/form.component";
 import { DescFormComponent } from "./desc-form/desc-form.component";
 import { MapComponent } from "./map/map.component";
+import { IframeModalComponent } from './iframe-modal/iframe-modal.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [NavBarComponent, MoodCardComponent, HeadComponent, FormComponent, DescFormComponent, MapComponent],
+  imports: [CommonModule, NavBarComponent, MoodCardComponent, HeadComponent, FormComponent, DescFormComponent, MapComponent, IframeModalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  showIframeModal = false;
+  iframeUrl = 'https://moods-ai.vercel.app/';
+
+  openIframeModal() {
+    this.showIframeModal = true;
+  }
+
+  closeIframeModal() {
+    this.showIframeModal = false;
+  }
 
   changeBackgroundColor(color: string) {
     document.documentElement.style.setProperty('--main-bg-color', color);
