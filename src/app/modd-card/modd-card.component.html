@@ -1,11 +1,8 @@
 <div class="card">
-    <img src="" alt="" id="mainImg">
+    <img [src]="pet" alt="Mood icon">
     <div class="descriptionCard">
         <ul>
-            <li id="li1"></li>
-            <li id="li2"></li>
-            <li id="li3"></li>
-            <li id="li4"></li>
+            <li *ngFor="let desc of descs">{{ desc }}</li>
         </ul>
     </div>
 </div>

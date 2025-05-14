@@ -1,10 +1,10 @@
-<div class="descform">
+<div class="descform" *ngIf="descFormVisible">
     <h2>Avez-vous plus de détails <br> sur votre ressenti ?</h2>
     <div class="container">
         <ul>
-            <li *ngFor="let desc of descs; let i = index">
+            <li *ngFor="let desc of descs; let i = index; trackBy: trackByIndex">
                 <label>{{ i + 1 }}</label>
-                <input type="text" [(ngModel)]="descs[i]" required>
+                <input type="text" [(ngModel)]="descs[i]" [name]="'desc' + i" required autocomplete="off" (input)="onDescInput(i)">
             </li>
         </ul>
     </div>
