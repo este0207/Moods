@@ -1,8 +1,14 @@
 <app-form></app-form>
 <app-desc-form></app-desc-form>
 <app-head></app-head>
-<app-modd-card></app-modd-card>
+<app-mood-card></app-mood-card>
 <app-map></app-map>
 <div class="navbar">
-  <app-nav-bar></app-nav-bar>
+  <app-nav-bar (openModal)="openIframeModal()"></app-nav-bar>
 </div>
+<app-iframe-modal
+  *ngIf="showIframeModal"
+  [iframeUrl]="iframeUrl"
+  [visible]="showIframeModal"
+  (closed)="closeIframeModal()"
+></app-iframe-modal>

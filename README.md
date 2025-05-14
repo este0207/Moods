@@ -1,59 +1,150 @@
-# Mood
+# Mood – Angular Mood Tracking App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+Mood is a modern, responsive Angular application for tracking and visualizing your daily moods. It features dynamic UI components, localStorage-based persistence, and a modular, scalable architecture following Angular and TypeScript best practices.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
+
+- **Mood Selection**: Choose your current mood (Happy, Sad, Angry, Bored) via an interactive form.
+- **Mood Description**: Add up to four custom descriptions for your mood.
+- **Mood Card**: Visual summary of your mood and descriptions, with mood-specific icons.
+- **Map Integration**: View your current location on a map (using Leaflet and LocationIQ API).
+- **Persistence**: All mood data and descriptions are stored in `localStorage` and auto-cleared daily at midnight.
+- **Responsive UI**: Mobile-first, adaptive design with CSS variables and best practices.
+- **Modular Angular Architecture**: Standalone components, strict typing, and Angular dependency injection.
+- **Unit Tests**: Each component includes unit tests for reliability.
+
+---
+
+## Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [Angular CLI](https://angular.io/cli) (`npm install -g @angular/cli`)
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development Server
+
+Start the local server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to [http://localhost:4200/](http://localhost:4200/) in your browser. The app reloads automatically on code changes.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Project Structure
 
-```bash
-ng generate component component-name
+```
+public/                      # Static assets (mood icons, favicon, etc.)
+  angry.png
+  bored.png
+  favicon.ico
+  happy.png
+  marker-icon-2x.png
+  marker-icon.png
+  marker-shadow.png
+  sad.png
+src/
+  index.html
+  main.ts
+  styles.css                 # Global styles
+  app/
+    app.component.*          # Root component
+    app.config.ts            # Angular app configuration
+    app.routes.ts            # App routing configuration
+    mood-state.service.ts    # Mood state management service
+    form/                    # Mood selection form component
+      form.component.*
+    desc-form/               # Mood description form component
+      desc-form.component.*
+    mood-card/               # Mood summary card component
+      mood-card.component.*
+    mood-title/              # Mood title display component
+      mood-title.component.*
+    nav-bar/                 # Navigation bar component
+      nav-bar.component.*
+    head/                    # Header section component
+      head.component.*
+    map/                     # Map integration component
+      map.component.*
+    iframe-modal/            # Iframe modal component
+      iframe-modal.component.*
+angular.json
+package.json
+tsconfig.json
+tsconfig.app.json
+tsconfig.spec.json
+README.md
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Usage
 
-## Building
+1. **Select Your Mood**: On launch, choose your mood and optionally add descriptions.
+2. **View Mood Card**: See your mood and details reflected in the summary card.
+3. **Map**: Open the map to view your current location (requires browser geolocation permission).
+4. **Persistence**: Your mood and details are saved for the day and reset at midnight.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## Scripts
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- `ng serve` – Start development server
+- `ng build` – Build for production
+- `ng test` – Run unit tests
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Testing
+
+Run all unit tests with:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Contributing
 
-```bash
-ng e2e
-```
+- Follow Angular and TypeScript best practices.
+- Use standalone components and services for business logic.
+- Write unit tests for all new features.
+- Use Angular CLI for code generation.
+- See `.editorconfig` for formatting rules.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+## Acknowledgements
+
+- [Angular](https://angular.io/)
+- [Leaflet](https://leafletjs.com/)
+- [LocationIQ](https://locationiq.com/)
+- [Font Awesome](https://fontawesome.com/)
+
+---
 
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Angular CLI Documentation](https://angular.dev/tools/cli)
+- [Angular Style Guide](https://angular.io/guide/styleguide)
+
+---
+
+*Generated on May 14, 2025*

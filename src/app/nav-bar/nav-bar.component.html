@@ -3,9 +3,15 @@
         <a href="#"><button><i class="fa-solid fa-user-group"></i></button></a>
         <button (click)="ShowMap()"><i class="fa-solid fa-map"></i></button>
     </div>
-    <a href="#"><button id="homeBtn"><i class="fa-solid fa-house"></i></button></a>
+    <a href="#"><button id="homeBtn" (click)="onHomeClick()"><i class="fa-solid fa-house"></i></button></a>
     <div class="second">
-        <a href="https://moods-ai.vercel.app/"><button><i class="fa-solid fa-comment-dots"></i></button></a>
+        <button (click)="onOpenIframeModal()"><i class="fa-solid fa-comment-dots"></i></button>
         <a href="#"><button><i class="fa-solid fa-gear"></i></button></a>
     </div>
 </div>
+<app-iframe-modal
+  *ngIf="showIframeModal"
+  [iframeUrl]="'https://moods-ai.vercel.app/'"
+  [visible]="showIframeModal"
+  (closed)="closeIframeModal()"
+></app-iframe-modal>

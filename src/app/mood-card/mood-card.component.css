@@ -1,0 +1,64 @@
+/* Mood Card Styles */
+
+:host {
+    display: flex;
+    width: 100%;
+}
+
+.card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(69, 51, 148, 0.12);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    max-width: 340px;
+    margin: 2.5rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 340px;
+    width: 90%;
+    position: relative;
+    padding-top: 110px; /* Add space for the overlapping image */
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1.2rem;
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.descriptionCard {
+    width: 100%;
+    overflow-y: auto;
+    margin-top: 0.5rem;
+}
+
+.descriptionCard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.descriptionCard li {
+    background: #f5f5fa;
+    border-radius: 10px;
+    margin-bottom: 0.7rem;
+    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+    color: #453394;
+    box-shadow: 0 1px 4px rgba(69, 51, 148, 0.06);
+    word-break: break-word;
+    transition: background 0.2s;
+}
+
+.descriptionCard li:last-child {
+    margin-bottom: 0;
+}
