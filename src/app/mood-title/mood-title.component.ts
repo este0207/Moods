@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MoodService, Mood } from '../form/mood.service';
+import { MoodStateService, MoodState } from '../mood-state.service';
 
 @Component({
   selector: 'app-mood-title',
@@ -8,9 +8,11 @@ import { MoodService, Mood } from '../form/mood.service';
   styleUrl: './mood-title.component.css'
 })
 export class MoodTitleComponent {
-  mood: Mood = '';
+  mood: MoodState['mood'] = '';
 
-  constructor(private moodService: MoodService) {
-    this.mood = this.moodService.getMood();
+  constructor(private moodState: MoodStateService) {
+    this.moodState.getState().subscribe(state => {
+      this.mood = state.mood;
+    });
   }
 }

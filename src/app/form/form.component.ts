@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MoodService, Mood } from './mood.service';
+import { MoodStateService, MoodState } from '../mood-state.service';
 
 @Component({
   selector: 'app-form',
@@ -11,11 +11,16 @@ import { MoodService, Mood } from './mood.service';
   styleUrl: './form.component.css'
 })
 export class FormComponent {
-  mood: Mood = '';
-  moods: Mood[] = ['HAPPY', 'SAD', 'ANGRY', 'BORED'];
+  mood: MoodState['mood'] = '';
+  moods: MoodState['mood'][] = ['HAPPY', 'SAD', 'ANGRY', 'BORED'];
   formVisible = true;
 
-  constructor(private moodService: MoodService) {}
+  constructor(private moodState: MoodStateService) {
+    this.moodState.getState().subscribe(state => {
+      this.formVisible = state.formVisible;
+      this.mood = state.mood;
+    });
+  }
 
   submitMood() {
     if (!this.mood) return;
@@ -39,8 +44,11 @@ export class FormComponent {
         pet = '/bored.png';
         break;
     }
-    this.moodService.setMood(this.mood, background, pet);
-    this.formVisible = false;
-    // Optionally emit event or close form here
+    this.moodState.setState({
+      mood: this.mood,
+      background,
+      pet,
+      formVisible: false
+    });
   }
 }

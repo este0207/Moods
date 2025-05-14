@@ -1,6 +1,6 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { MoodService, Mood } from '../form/mood.service';
+import { MoodStateService, MoodState } from '../mood-state.service';
 
 @Component({
   selector: 'app-modd-card',
@@ -9,36 +9,18 @@ import { MoodService, Mood } from '../form/mood.service';
   templateUrl: './modd-card.component.html',
   styleUrl: './modd-card.component.css',
 })
-export class ModdCardComponent implements OnInit, DoCheck {
-  mood: Mood = '';
+export class ModdCardComponent implements OnInit {
+  mood: MoodState['mood'] = '';
   pet: string = '';
   descs: string[] = [];
 
-  constructor(private moodService: MoodService) {}
+  constructor(private moodState: MoodStateService) {}
 
   ngOnInit(): void {
-    this.refresh();
-  }
-
-  ngDoCheck(): void {
-    this.refresh();
-  }
-
-  private refresh(): void {
-    this.mood = this.moodService.getMood();
-    this.pet = this.moodService.getPet();
-    const stored = localStorage.getItem('descs');
-    if (stored) {
-      try {
-        const arr = JSON.parse(stored);
-        if (Array.isArray(arr)) {
-          this.descs = arr;
-        }
-      } catch {
-        this.descs = [];
-      }
-    } else {
-      this.descs = [];
-    }
+    this.moodState.getState().subscribe(state => {
+      this.mood = state.mood;
+      this.pet = state.pet;
+      this.descs = state.descs.filter(d => d.trim() !== '');
+    });
   }
 }
