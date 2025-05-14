@@ -44,22 +44,46 @@ Navigate to [http://localhost:4200/](http://localhost:4200/) in your browser. Th
 ## Project Structure
 
 ```
-├── public/           # Static assets (mood icons, favicon, etc.)
-├── src/
-│   ├── app/
-│   │   ├── app.component.*      # Root component
-│   │   ├── form/                # Mood selection form
-│   │   ├── desc-form/           # Mood description form
-│   │   ├── mood-card/           # Mood summary card
-│   │   ├── mood-title/          # Mood title display
-│   │   ├── nav-bar/             # Navigation bar
-│   │   ├── head/                # Header section
-│   │   └── map/                 # Map integration
-│   ├── styles.css               # Global styles
-│   └── ...
-├── angular.json
-├── package.json
-└── README.md
+public/                      # Static assets (mood icons, favicon, etc.)
+  angry.png
+  bored.png
+  favicon.ico
+  happy.png
+  marker-icon-2x.png
+  marker-icon.png
+  marker-shadow.png
+  sad.png
+src/
+  index.html
+  main.ts
+  styles.css                 # Global styles
+  app/
+    app.component.*          # Root component
+    app.config.ts            # Angular app configuration
+    app.routes.ts            # App routing configuration
+    mood-state.service.ts    # Mood state management service
+    form/                    # Mood selection form component
+      form.component.*
+    desc-form/               # Mood description form component
+      desc-form.component.*
+    mood-card/               # Mood summary card component
+      mood-card.component.*
+    mood-title/              # Mood title display component
+      mood-title.component.*
+    nav-bar/                 # Navigation bar component
+      nav-bar.component.*
+    head/                    # Header section component
+      head.component.*
+    map/                     # Map integration component
+      map.component.*
+    iframe-modal/            # Iframe modal component
+      iframe-modal.component.*
+angular.json
+package.json
+tsconfig.json
+tsconfig.app.json
+tsconfig.spec.json
+README.md
 ```
 
 ---

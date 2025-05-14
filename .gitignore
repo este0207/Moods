@@ -2,6 +2,7 @@
 
 .vscode/
 .github/
+.angular/
 
 # Compiled output
 /dist
