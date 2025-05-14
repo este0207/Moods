@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-import { ModdCardComponent } from '../modd-card/modd-card.component';
-import { MoodTitleComponent } from '../mood-title/mood-title.component';
-import { NavBarComponent } from '../nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-form',
-  imports: [ModdCardComponent, MoodTitleComponent, NavBarComponent],
+  imports: [],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })

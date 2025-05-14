@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { MoodTitleComponent } from "./mood-title/mood-title.component";
 import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { ModdCardComponent } from "./modd-card/modd-card.component";
@@ -10,7 +9,7 @@ import { MapComponent } from "./map/map.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBarComponent, ModdCardComponent, HeadComponent, FormComponent, DescFormComponent, MapComponent],
+  imports: [NavBarComponent, ModdCardComponent, HeadComponent, FormComponent, DescFormComponent, MapComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
