@@ -50,7 +50,7 @@ Navigate to [http://localhost:4200/](http://localhost:4200/) in your browser. Th
 │   │   ├── app.component.*      # Root component
 │   │   ├── form/                # Mood selection form
 │   │   ├── desc-form/           # Mood description form
-│   │   ├── modd-card/           # Mood summary card
+│   │   ├── mood-card/           # Mood summary card
 │   │   ├── mood-title/          # Mood title display
 │   │   ├── nav-bar/             # Navigation bar
 │   │   ├── head/                # Header section

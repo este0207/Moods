@@ -3,13 +3,13 @@ import { NgFor } from '@angular/common';
 import { MoodStateService, MoodState } from '../mood-state.service';
 
 @Component({
-  selector: 'app-modd-card',
+  selector: 'app-mood-card',
   standalone: true,
   imports: [NgFor],
-  templateUrl: './modd-card.component.html',
-  styleUrl: './modd-card.component.css',
+  templateUrl: './mood-card.component.html',
+  styleUrl: './mood-card.component.css',
 })
-export class ModdCardComponent implements OnInit {
+export class MoodCardComponent implements OnInit {
   mood: MoodState['mood'] = '';
   pet: string = '';
   descs: string[] = [];
