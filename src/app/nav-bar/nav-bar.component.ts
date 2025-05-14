@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MoodStateService } from '../mood-state.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
+  constructor(private moodState: MoodStateService) {}
 
   ShowMap() {
     const mapcontainer = document.getElementById("mapcontainer");
@@ -15,4 +17,7 @@ export class NavBarComponent {
     }
   }
 
+  onHomeClick() {
+    this.moodState.resetState();
+  }
 }
