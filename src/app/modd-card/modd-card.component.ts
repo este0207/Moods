@@ -7,7 +7,7 @@ import { MoodService, Mood } from '../form/mood.service';
   standalone: true,
   imports: [NgFor],
   templateUrl: './modd-card.component.html',
-  styleUrl: './modd-card.component.css'
+  styleUrl: './modd-card.component.css',
 })
 export class ModdCardComponent implements OnInit, DoCheck {
   mood: Mood = '';
